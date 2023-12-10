@@ -1,0 +1,3390 @@
+{
+	"info": {
+		"_postman_id": "48b49f2d-9743-427a-9a7a-2e895f032cde",
+		"name": "api laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31102984"
+	},
+	"item": [
+		{
+			"name": "/sanctum/csrf-cookie",
+			"item": [
+				{
+					"name": "csrf-cookie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/sanctum/csrf-cookie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"sanctum",
+								"csrf-cookie"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "get-sanctum-token",
+							"item": [
+								{
+									"name": "get sanctum personal access token",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/get-sanctum-token",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"get-sanctum-token"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "register",
+							"item": [
+								{
+									"name": "register",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "testregistrrr",
+													"type": "default"
+												},
+												{
+													"key": "phone_number",
+													"value": "3333555555",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "testregistr@gmai.com",
+													"type": "default"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "default"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/register",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "verify-email",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Cookie",
+												"value": "eyJpdiI6IlJkQkNISVhteDVTWXcrdlZKVFZJMGc9PSIsInZhbHVlIjoibUtlK3ZPUmMzMFRxbFlFcGd0S1l1VGdVeGpyQVVuRm8vV0tySHlyMTNRUmdLR3ZlMmtqcWVBRWExNzh1bEQ5Z3NFQlB3OVJ5aUwwdHByVnFCU0xZWXZCeUwxaVJwdVlVZXhScGlrL1MxcWdVZmJIYzN4RW5sTThvc1JjQ1NOaEIiLCJtYWMiOiI4YWM5OWVlMGY4YTc4NTVlODA4ZmQ2NjM5ZjQ3NDFmYzRjZGFlNWNjOTQ4ODcyYTE1MzMwM2NiY2E0MmUwZDQyIiwidGFnIjoiIn0=",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/verify-email/9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee/dad76fbf91185e02d489890812bc6d22802974d0?expires=1700652648&signature=414a22d4c80f53ed85e4c5d95872f4604450a897764d43a8608daf1809449314",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"verify-email",
+												"9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee",
+												"dad76fbf91185e02d489890812bc6d22802974d0"
+											],
+											"query": [
+												{
+													"key": "expires",
+													"value": "1700652648"
+												},
+												{
+													"key": "signature",
+													"value": "414a22d4c80f53ed85e4c5d95872f4604450a897764d43a8608daf1809449314"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "login",
+							"item": [
+								{
+									"name": "forgot-password",
+									"item": [
+										{
+											"name": "forgot-password",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "email",
+															"value": "user@mail.ru",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8081/api/v1/forgot-password",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8081",
+													"path": [
+														"api",
+														"v1",
+														"forgot-password"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "reset-password",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "password",
+															"value": "newpassword",
+															"type": "text"
+														},
+														{
+															"key": "password_confirmation",
+															"value": "newpassword",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8081/api/v1/reset-password?token=eca3f84c2d10faa16c89409f1b021e9b195b0d19be698716be92098d387b432d&email=newnew%40gmai.com",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8081",
+													"path": [
+														"api",
+														"v1",
+														"reset-password"
+													],
+													"query": [
+														{
+															"key": "token",
+															"value": "eca3f84c2d10faa16c89409f1b021e9b195b0d19be698716be92098d387b432d"
+														},
+														{
+															"key": "email",
+															"value": "newnew%40gmai.com"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "login",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "user@mail.ru",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "newpassword",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"login"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "home",
+					"item": [
+						{
+							"name": "home",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "categories",
+					"item": [
+						{
+							"name": "get all categories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "category show",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/category/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "product-categories",
+					"item": [
+						{
+							"name": "get all product-categories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/product-category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"product-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "product-category show",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/product-category/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"product-category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "products",
+					"item": [
+						{
+							"name": "get all products",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/product/9ac89de0-8b63-4c47-a25a-88c980714925",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"9ac89de0-8b63-4c47-a25a-88c980714925"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get product seach by name",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/search?name=SAMSUNG",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"search"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "SAMSUNG"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "index reviews",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "localhost:8081",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/admin/9abb17bc-e153-4294-bd1a-f74916ce292b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"9abb17bc-e153-4294-bd1a-f74916ce292b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "9abb17bc-2b18-483b-b923-2433dc16ff56",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "9abb17bc-a8c0-4d5b-8687-b2991b32798c",
+									"type": "text"
+								},
+								{
+									"key": "commentary",
+									"value": "comment",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|6bSiicj1FFmq0r8F9mpOiG6RejSDa6BDzZ1xqCEPa67b7c04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "commentary",
+									"value": "loleeeeeAAAEEfea",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/review/9ac46f59-9f57-4c67-8743-0e1676992ae8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"9ac46f59-9f57-4c67-8743-0e1676992ae8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|6bSiicj1FFmq0r8F9mpOiG6RejSDa6BDzZ1xqCEPa67b7c04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/review/9ac0be24-2e95-4c04-9ef8-ae76f5ddb380",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"9ac0be24-2e95-4c04-9ef8-ae76f5ddb380"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "index comments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|mxHFf9SWsD4MTUmPgklIrkgrESny73ESJWAspsEO017a3e00",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/comment/9abb17bc-e893-443e-bda5-015cd4b83c7a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"9abb17bc-e893-443e-bda5-015cd4b83c7a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "lelleaaeeadad",
+									"type": "text"
+								},
+								{
+									"key": "review_id",
+									"value": "9abb17bc-e153-4294-bd1a-f74916ce292b",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "9abb17bc-721c-46a4-b3ed-04e4455dc41d",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "aaaaaaaaaaaaaaaaaaaaaawd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/comment/9abb17bc-e893-443e-bda5-015cd4b83c7a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"9abb17bc-e893-443e-bda5-015cd4b83c7a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/comment/9abb17bc-e893-443e-bda5-015cd4b83c7a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"9abb17bc-e893-443e-bda5-015cd4b83c7a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "protected",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "profile",
+							"item": [
+								{
+									"name": "profile",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "25|sZKsuOmB0msSkoTLPnd6tDJbADnVsGbImMFr6hSJ3b150ec3",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Referer",
+												"value": "http://localhost:8081",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/profile",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"profile"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "upload image",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "2|6bSiicj1FFmq0r8F9mpOiG6RejSDa6BDzZ1xqCEPa67b7c04",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/home/oldboy/Pictures/Screenshots/Screenshot from 2023-12-05 19-51-05.png"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/profile/upload-image",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"profile",
+												"upload-image"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "reset email",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/profile/reset-email",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"profile",
+												"reset-email"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "new email",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/profile/new-email",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"profile",
+												"new-email"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "my-notifications",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								},
+								{
+									"name": "my-orders",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "new-order",
+							"item": []
+						},
+						{
+							"name": "logout",
+							"item": [
+								{
+									"name": "logout",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"logout"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "orders",
+							"item": []
+						},
+						{
+							"name": "users",
+							"item": [
+								{
+									"name": "index users",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "2|CB2GZq1ISWrAuoXarDQ2qMip7EtijkOggom2lYD0f36aed23",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/users",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "3|FdV61XY4yUzKw00KH6sOmfIGhZbRvBOtN4lkxRAif422b6a8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/users/9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"users",
+												"9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "testlast12",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "testlast12@mail.ru",
+													"type": "text"
+												},
+												{
+													"key": "phone_number",
+													"value": "888888888",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text"
+												},
+												{
+													"key": "user_role_id",
+													"value": "3",
+													"description": "default = user - 3",
+													"type": "text"
+												},
+												{
+													"key": "email_verified_at",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/users",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "3|FdV61XY4yUzKw00KH6sOmfIGhZbRvBOtN4lkxRAif422b6a8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "updated",
+													"type": "text"
+												},
+												{
+													"key": "phone_number",
+													"value": "9999999",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "updated@mail.ru",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "updatedpassword",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/users/9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"users",
+												"9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "3|FdV61XY4yUzKw00KH6sOmfIGhZbRvBOtN4lkxRAif422b6a8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/users/9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"users",
+												"9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "categories",
+							"item": [
+								{
+									"name": "index categories",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/category",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"category"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/category/5",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"category",
+												"5"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "NEWcategory",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/category",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"category"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "ffffffffffffffffffff",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/category/6",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"category",
+												"6"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete category",
+									"request": {
+										"method": "DELETE",
+										"header": []
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "product-categories",
+							"item": [
+								{
+									"name": "index product-categories",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product-category",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product-category"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show product-category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product-category/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product-category",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store product-category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "test",
+													"type": "text"
+												},
+												{
+													"key": "category_id",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product-category",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product-category"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update product-category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "lolaaaa",
+													"type": "text"
+												},
+												{
+													"key": "category_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product-category/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product-category",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete product-category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|IiG95iexQptrx7JiCnaEBeH0jCVmw1P4hv9RiRmw8ff3d5a6",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product-category/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product-category",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "products",
+							"item": [
+								{
+									"name": "get all products",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show product",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product/9abb17bc-a8c0-4d5b-8687-b2991b32798c",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product",
+												"9abb17bc-a8c0-4d5b-8687-b2991b32798c"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store product",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "category_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "product_category_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "aweqqqeqweaeeqq",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "333",
+													"type": "text"
+												},
+												{
+													"key": "about",
+													"value": "asdasdasdad",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "published",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update product",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "category_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "product_category_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "RTX 4080 ggeq",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "333",
+													"type": "text"
+												},
+												{
+													"key": "about",
+													"value": "adasdasdadq",
+													"type": "text"
+												},
+												{
+													"key": "published",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product/9abb17bc-a8c0-4d5b-8687-b2991b32798c",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product",
+												"9abb17bc-a8c0-4d5b-8687-b2991b32798c"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete product",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/product/9abb17bc-a8c0-4d5b-8687-b2991b32798c",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"product",
+												"9abb17bc-a8c0-4d5b-8687-b2991b32798c"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "description",
+							"item": [
+								{
+									"name": "index descriptions",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/description",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"description"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show description",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/description/9abb17bd-01b2-4d23-a120-f10e05cddb75",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"description",
+												"9abb17bd-01b2-4d23-a120-f10e05cddb75"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store descripton",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/description",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"description"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update description",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "text",
+													"value": "text",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/description/9abb17bd-01b2-4d23-a120-f10e05cddb75",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"description",
+												"9abb17bd-01b2-4d23-a120-f10e05cddb75"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete description",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/decription/9abb17bd-01b2-4d23-a120-f10e05cddb75",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"decription",
+												"9abb17bd-01b2-4d23-a120-f10e05cddb75"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "attribute values",
+							"item": [
+								{
+									"name": "index attribute-values",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-value",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-value"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show attribute-value",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-value/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-value",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store attribute-value",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "product_id",
+													"value": "9abb17bc-a8c0-4d5b-8687-b2991b32798c",
+													"type": "text"
+												},
+												{
+													"key": "product_category_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "attribute_id",
+													"value": "26",
+													"type": "text"
+												},
+												{
+													"key": "value",
+													"value": "AAAAAWWWW",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-value",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-value"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update attribute-value",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "value",
+													"value": "AAAAAAAAAAAAAAQQQQQQ",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-value/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-value",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete attribute-value",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept-Encoding",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-value/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-value",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "attribute names",
+							"item": [
+								{
+									"name": "index attribute-names",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-name",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-name"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show attribute-name",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-name/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-name",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store attribute-name",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "product_category_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "adadadawdawd",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-name",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-name"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update attribute-name",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "eeeddeeee",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-name/21",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-name",
+												"21"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete attribute-name",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/attribute-name/30",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"attribute-name",
+												"30"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "reviews",
+							"item": [
+								{
+									"name": "index reviews",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/review",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"review"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show review",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/review/9abb17bc-e153-4294-bd1a-f74916ce292b",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"review",
+												"9abb17bc-e153-4294-bd1a-f74916ce292b"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store review",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "user_id",
+													"value": "9abb17bc-2b18-483b-b923-2433dc16ff56",
+													"type": "text"
+												},
+												{
+													"key": "product_id",
+													"value": "9abb17bc-a8c0-4d5b-8687-b2991b32798c",
+													"type": "text"
+												},
+												{
+													"key": "commentary",
+													"value": "comment",
+													"type": "text"
+												},
+												{
+													"key": "rating",
+													"value": "5",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/review",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"review"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update review",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "commentary",
+													"value": "SUKA BLEAT",
+													"type": "text"
+												},
+												{
+													"key": "rating",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "product_id",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "user_id",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/review/9ac0be24-2e95-4c04-9ef8-ae76f5ddb380",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"review",
+												"9ac0be24-2e95-4c04-9ef8-ae76f5ddb380"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete review",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/review/9ac0be24-2e95-4c04-9ef8-ae76f5ddb380",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"review",
+												"9ac0be24-2e95-4c04-9ef8-ae76f5ddb380"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "comments",
+							"item": [
+								{
+									"name": "index comments",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/comment",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"comment"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show comment",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/comment/9abb17bc-e893-443e-bda5-015cd4b83c7a",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"comment",
+												"9abb17bc-e893-443e-bda5-015cd4b83c7a"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store comment",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "comment",
+													"value": "lelleaaeeadad",
+													"type": "text"
+												},
+												{
+													"key": "review_id",
+													"value": "9abb17bc-e153-4294-bd1a-f74916ce292b",
+													"type": "text"
+												},
+												{
+													"key": "user_id",
+													"value": "9abb17bc-721c-46a4-b3ed-04e4455dc41d",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/comment",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"comment"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update comment",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "comment",
+													"value": "aaaaaaaaaaaaaaaaaaaaaawd",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/comment/9abb17bc-e893-443e-bda5-015cd4b83c7a",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"comment",
+												"9abb17bc-e893-443e-bda5-015cd4b83c7a"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete comment",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "1|z7VctwSrqagrfaxqHGmEUnEERM2DmF2tie9Ioskqb2347bef",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/v1/admin/comment/9abb17bc-e893-443e-bda5-015cd4b83c7a",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"v1",
+												"admin",
+												"comment",
+												"9abb17bc-e893-443e-bda5-015cd4b83c7a"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const jar = pm.cookies.jar();",
+					"",
+					"jar.get(\"http://localhost:8080\", \"XSRF-TOKEN\", (err, cookie) => {",
+					"    pm.request.addHeader({",
+					"        key: \"X-XSRF-TOKEN\",",
+					"        value:cookie",
+					"    });",
+					"",
+					"    pm.request.addHeader({",
+					"       key: \"Referer\",",
+					"       value: \"http://localhost:8081\"     ",
+					"    });",
+					"});",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
