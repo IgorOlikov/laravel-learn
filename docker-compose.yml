@@ -1,0 +1,105 @@
+version: "3.8"
+
+services:
+  gateway-server:
+          build:
+            context: docker/development
+            dockerfile: gateway-server/Dockerfile
+          ports:
+            - "8080:8080"
+            - "8081:8081"
+          depends_on:
+            - api-server
+            - frontend-server
+
+  frontend-server:
+    build:
+      context: docker/development/frontend
+      dockerfile: frontend-server/Dockerfile
+    volumes:
+      - ./api:/app
+      - ./frontend/public/:/app/public
+
+  api-server:
+    build:
+      context: docker/development/api
+      dockerfile: api-server/Dockerfile
+    ports:
+      - "8081"
+    volumes:
+      - ./api:/app
+    depends_on:
+      - api-php-fpm
+
+  api-php-fpm:
+    build:
+      context: docker/development/api
+      dockerfile: api-php-fpm/Dockerfile
+    environment:
+        DB_HOST: api-postgresql
+        DB_USER: app
+        DB_PASSWORD_FILE: /run/secrets/api-postgresql-password
+        DB_NAME: app
+    volumes:
+      - ./api:/app
+
+
+    depends_on:
+      - api-postgresql
+    secrets:
+      - api-postgresql-password
+
+
+  api-php-cli:
+    build:
+      context: docker/development/api
+      dockerfile: api-php-cli/Dockerfile
+    environment:
+      DB_HOST: api-postgresql
+      DB_USER: app
+      DB_PASSWORD_FILE: /run/secrets/api-postgresql-password
+      DB_NAME: app
+    volumes:
+      - ./api:/app
+    secrets:
+      - api-postgresql-password
+
+  composer:
+      build:
+        context: docker/development/
+        dockerfile: composer/Dockerfile
+      volumes:
+        - ./api:/app
+
+  artisan:
+        build:
+          context: docker/development/api
+          dockerfile: php/Dockerfile
+        volumes:
+          - ./api:/app
+        entrypoint: [ "php", "artisan" ]
+        ###docker compose run artisan
+
+
+  api-postgresql:
+    image: postgres:16-alpine3.18
+    environment:
+        POSTGRES_USER: app
+        POSTGRES_PASSWORD_FILE: /run/secrets/api-postgresql-password
+        POSTGRES_DB: app
+        POSTGRES_HOST: api-postgresql
+    secrets:
+      - api-postgresql-password
+    volumes:
+      - ./api-postgresql:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+secrets:
+      api-postgresql-password:
+          file: ./docker/development/secrets/api-postgresql-password
+
+volumes:
+    api-postgresql-password:
+
+
