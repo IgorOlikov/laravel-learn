@@ -261,7 +261,7 @@
 													]
 												},
 												"url": {
-													"raw": "http://localhost:8081/api/v1/reset-password?token=eca3f84c2d10faa16c89409f1b021e9b195b0d19be698716be92098d387b432d&email=newnew%40gmai.com",
+													"raw": "http://localhost:8081/api/v1/reset-password?token=a1d173cac5319b4998794ff15e2010cb5beae8ed30a49aa474e24f6ec52ff35b&email=user%40mail.ru",
 													"protocol": "http",
 													"host": [
 														"localhost"
@@ -275,11 +275,11 @@
 													"query": [
 														{
 															"key": "token",
-															"value": "eca3f84c2d10faa16c89409f1b021e9b195b0d19be698716be92098d387b432d"
+															"value": "a1d173cac5319b4998794ff15e2010cb5beae8ed30a49aa474e24f6ec52ff35b"
 														},
 														{
 															"key": "email",
-															"value": "newnew%40gmai.com"
+															"value": "user%40mail.ru"
 														}
 													]
 												}
@@ -786,7 +786,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8081/api/v1/review/9ac0be24-2e95-4c04-9ef8-ae76f5ddb380",
+							"raw": "http://localhost:8081/api/v1/review/9ac46f59-9ff5-4b34-9d53-8de1dbffd8d5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -796,7 +796,7 @@
 								"api",
 								"v1",
 								"review",
-								"9ac0be24-2e95-4c04-9ef8-ae76f5ddb380"
+								"9ac46f59-9ff5-4b34-9d53-8de1dbffd8d5"
 							]
 						}
 					},
@@ -1116,7 +1116,7 @@
 												{
 													"key": "image",
 													"type": "file",
-													"src": "/home/oldboy/Pictures/Screenshots/Screenshot from 2023-12-05 19-51-05.png"
+													"src": "/home/oldboy/Downloads/foto.jpg"
 												}
 											]
 										},
@@ -1299,7 +1299,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "3|FdV61XY4yUzKw00KH6sOmfIGhZbRvBOtN4lkxRAif422b6a8",
+													"value": "",
 													"type": "string"
 												}
 											]
@@ -1325,13 +1325,6 @@
 												"admin",
 												"users",
 												"9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee"
-											],
-											"query": [
-												{
-													"key": "id",
-													"value": "9aac523e-8f6d-45a7-a4e7-c6a94af9c6ee",
-													"disabled": true
-												}
 											]
 										}
 									},
@@ -2306,7 +2299,18 @@
 										],
 										"body": {
 											"mode": "urlencoded",
-											"urlencoded": []
+											"urlencoded": [
+												{
+													"key": "product_id",
+													"value": "9abb17bc-a8c0-4d5b-8687-b2991b32798c",
+													"type": "text"
+												},
+												{
+													"key": "text",
+													"value": "aaaaa",
+													"type": "text"
+												}
+											]
 										},
 										"url": {
 											"raw": "http://localhost:8081/api/v1/admin/description",
@@ -2478,7 +2482,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://localhost:8081/api/v1/admin/attribute-value/1",
+											"raw": "http://localhost:8081/api/v1/admin/attribute-value/2",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -2489,7 +2493,7 @@
 												"v1",
 												"admin",
 												"attribute-value",
-												"1"
+												"2"
 											]
 										}
 									},
