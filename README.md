@@ -28,4 +28,11 @@ REST API для интернет магазина.
 
 Руководство по запуску.
 Выполнить с корневой папки проекта команды:
-1)
+1)docker compose build
+2)docker compose ud -d
+3) docker compose run —rm api-php-cli composer update
+4) docker compose run —rm api-php-cli php artisan db:seed
+ВАЖНО!
+Если сервер будет отвечать с ошибкой 500.
+Выдать права на чтение файлов chmod -R 777 chown -R user:user на папку с приложением.
+Будет позже исправлено.
